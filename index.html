@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wesley safadão</title>
+</head>
+<body>
+<form onsubmit="{SaveDataForCalculation()}" action="">
+    <input type="number" id="day" />
+    <input type="number" id="mouth" />
+    <input type="number" id="year" />
+
+    <button type="submit">Calcular safadeza</button>
+</form>
+
+<script>
+      function SaveDataForCalculation() {
+        const day = document.querySelector('#day').value
+
+        const mouth = document.querySelector('#mouth').value
+
+        const year = document.querySelector('#year').value
+
+        function somatorio(mouth) {
+          let soma = 0
+          for (counter = 1; counter <= mouth; counter++) {
+            let soma = +counter
+          }
+          return soma
+        }
+
+        const safadeza = somatorio(mouth) + (year / 100) * (50 - day)
+
+        const anjo = 100 - safadeza
+
+        document.write(
+          `${Number.parseInt(anjo)}% ANJO, mas aquele ${Number.parseInt(
+            safadeza
+          )}% e VAGABUNDO`
+        )
+      }
+    </script>
+</body>
+</html>
